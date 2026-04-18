@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Kanit", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  
+  --color-coffee-white: #FFFFFF;
+  --color-coffee-gray: #F5F5F5;
+  --color-coffee-sidebar: #FAFAFA;
+  --color-coffee-orange: #FF8C42;
+  --color-coffee-dark: #2D2D2D;
+  --color-coffee-muted: #757575;
+  --color-coffee-border: #E0E0E0;
+}
+
+body {
+  @apply bg-coffee-gray text-coffee-dark font-sans antialiased;
+}
+
+h1, h2, h3, h4, .font-serif {
+  @apply font-serif;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,140,66,0.15)] hover:border-coffee-orange;
+}
+
+.btn-coffee {
+  @apply bg-coffee-orange text-white px-8 py-3 rounded-lg font-bold transition-all hover:bg-coffee-orange/90 active:scale-95 text-xs tracking-widest uppercase;
+}
+
+.section-spacing {
+  @apply py-16 px-6 lg:px-16;
+}
+
+/* Minimalist cards */
+.coffee-card {
+  @apply bg-coffee-white rounded-xl overflow-hidden shadow-none border border-coffee-border;
+}
+
+.label-minimal {
+  @apply text-[12px] uppercase tracking-[2px] text-coffee-muted font-medium mb-6 block;
+}
+
+/* Sidebar pattern */
+.sidebar-container {
+  @apply bg-coffee-sidebar border-l border-coffee-border p-10 flex flex-col gap-10;
+}
+
+/* Soft orange accent transitions */
+.accent-link {
+  @apply text-coffee-dark transition-colors hover:text-coffee-orange text-xs font-bold uppercase tracking-widest;
+}
