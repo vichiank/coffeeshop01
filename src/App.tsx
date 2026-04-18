@@ -5,6 +5,7 @@
 
 import { useState, useEffect, type FormEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { IMAGES } from './constants/images';
 import { 
   Menu, 
   X, 
@@ -40,7 +41,7 @@ const PRODUCTS: Product[] = [
     name: 'เอสเพรสโซ่คลาสสิก',
     description: 'ช็อตกาแฟเข้มข้นที่ให้พลังงานเต็มเปี่ยม รสชาติลุ่มลึก นุ่มนวลด้วยครีมม่าสีทอง',
     price: '$3.50',
-    image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=800&auto=format&fit=crop',
+    image: IMAGES.products.espresso,
     category: 'Hot'
   },
   {
@@ -48,7 +49,7 @@ const PRODUCTS: Product[] = [
     name: 'ลาเต้อาร์ทิซาน',
     description: 'เอสเพรสโซ่รสนุ่มผสมผสานกับนมสดที่ผ่านการสตรีมจนได้ฟองนมที่ละเอียดอ่อน',
     price: '$4.75',
-    image: 'https://images.unsplash.com/photo-1536935338788-846bb9981813?q=80&w=800&auto=format&fit=crop',
+    image: IMAGES.products.latte,
     category: 'Hot'
   },
   {
@@ -56,7 +57,7 @@ const PRODUCTS: Product[] = [
     name: 'ซิกเนเจอร์ คาปูชิโน่',
     description: 'ส่วนผสมที่ลงตัวของเอสเพรสโซ่ นมสตรีม และฟองนมนุ่มฟู เมนูโปรดสำหรับยามเช้า',
     price: '$4.50',
-    image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=800&auto=format&fit=crop',
+    image: IMAGES.products.cappuccino,
     category: 'Hot'
   },
   {
@@ -64,7 +65,7 @@ const PRODUCTS: Product[] = [
     name: 'ไอซ์ วานิลลา บีน',
     description: 'กาแฟสกัดเย็นคุณภาพเยี่ยม ผสมผสานกับไซรัปวานิลลาออร์แกนิกและครีมสด',
     price: '$5.25',
-    image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=800&auto=format&fit=crop',
+    image: IMAGES.products.vanillaCold,
     category: 'Cold'
   },
   {
@@ -72,7 +73,7 @@ const PRODUCTS: Product[] = [
     name: 'คาราเมล มัคคิอาโต้',
     description: 'ชั้นของฟองนม เอสเพรสโซ่ และนมสด ปิดท้ายด้วยซอสคาราเมลรสหวานหอม',
     price: '$4.95',
-    image: 'https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=800&auto=format&fit=crop',
+    image: IMAGES.products.caramel,
     category: 'Hot'
   },
   {
@@ -80,7 +81,7 @@ const PRODUCTS: Product[] = [
     name: 'มัทฉะ กรีนที ลาเต้',
     description: 'ผงมัทฉะเกรดพรีเมียมพิถีพิถันชงกับนมโอ๊ตสตรีมร้อน มอบรสชาติที่กลมกล่อม',
     price: '$5.50',
-    image: 'https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?q=80&w=800&auto=format&fit=crop',
+    image: IMAGES.products.matcha,
     category: 'Specialty'
   }
 ];
@@ -183,24 +184,26 @@ const Home = ({ setPage }: HomeProps) => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-8 bg-white/50 backdrop-blur-sm p-8 md:p-12 rounded-3xl border border-coffee-border shadow-soft"
           >
-            <span className="label-minimal">Establish Since 2012</span>
-            <h1 className="text-6xl md:text-7xl font-sans font-bold leading-[1.1] text-coffee-dark">
-              Brewing Moments<br />
-              One Cup <span className="text-coffee-orange">at a Time.</span>
-            </h1>
-            <p className="text-lg text-coffee-muted leading-relaxed max-w-md">
+            <div className="space-y-4">
+              <span className="label-minimal">Establish Since 2012</span>
+              <h1 className="text-5xl md:text-6xl font-sans font-bold leading-[1.1] text-coffee-dark uppercase tracking-tight">
+                Brewing Moments<br />
+                One Cup <span className="text-coffee-orange">at a Time.</span>
+              </h1>
+            </div>
+            <p className="text-base text-coffee-muted leading-relaxed max-w-sm">
               สัมผัสศิลปะแห่งกาแฟทำมือ เราคัดสรรเมล็ดกาแฟที่ดีที่สุดจากทั่วโลกและคั่วอย่างพิถีพิถันเพื่อช่วงเวลาสุดพิเศษของคุณ
             </p>
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-wrap gap-4 pt-2">
               <button 
                 onClick={() => setPage('products')}
                 className="btn-coffee"
               >
                 Explore Menu
               </button>
-              <button className="px-8 py-3 rounded-lg border border-coffee-border text-coffee-dark font-bold text-xs uppercase tracking-widest hover:bg-coffee-gray transition-all">
+              <button className="px-8 py-3 rounded-lg border border-coffee-border text-coffee-dark font-bold text-[10px] uppercase tracking-widest hover:bg-coffee-gray transition-all">
                 Our Story
               </button>
             </div>
@@ -213,8 +216,8 @@ const Home = ({ setPage }: HomeProps) => {
             className="hidden lg:block relative h-[600px]"
           >
             <img 
-              src="https://picsum.photos/seed/minimalcafe/1200/1200" 
-              alt="Minimalist Coffee" 
+              src={IMAGES.hero} 
+              alt="Luxury Coffee Experience" 
               className="w-full h-full object-cover rounded-[2rem] shadow-2xl border-8 border-white"
               referrerPolicy="no-referrer"
             />
