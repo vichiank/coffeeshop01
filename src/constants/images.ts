@@ -11,7 +11,7 @@ export const IMAGES = {
 
   products: {
     espresso: '/images/espresso.jpg',
-    latte: '/public/images/latte.jpg',
+    latte: '/images/latte.jpg',
     cappuccino: '/images/cappuccino.jpg',
     vanillaCold: '/images/vanilla-Cold.jpg',
     caramel: '/images/caramel.jpg',
