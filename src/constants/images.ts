@@ -10,8 +10,8 @@ export const IMAGES = {
   // hero: '/images/hero.jpg', // Local version (Uncomment to use after upload)
 
   products: {
-    espresso: './images/espresso.jpg',
-    latte: './public/images/latte.jpg',
+    espresso: '/images/espresso.jpg',
+    latte: '/public/images/latte.jpg',
     cappuccino: '/images/cappuccino.jpg',
     vanillaCold: '/images/vanilla-Cold.jpg',
     caramel: '/images/caramel.jpg',
