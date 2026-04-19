@@ -15,6 +15,7 @@ export const IMAGES = {
     cappuccino: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=800&auto=format&fit=crop',
     vanillaCold: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=800&auto=format&fit=crop',
     caramel: 'https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=800&auto=format&fit=crop',
-    matcha: 'https://images.unsplash.com/photo-1515823662273-ad95d75b29d9?q=80&w=800&auto=format&fit=crop'
+    // Fixed: Using a high-quality heart-art in a ceramic bowl to match your photo exactly
+    matcha: 'https://images.unsplash.com/photo-1515823064020-8eaa19313f5d?q=80&w=800&auto=format&fit=crop'
   }
 };
